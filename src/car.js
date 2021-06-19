@@ -1,4 +1,5 @@
 export function runRace(cars, count, resultContainer) {
+  resultContainer.innerHTML = '';
   for (let i = 0; i < count; i += 1) {
     let statusString = '';
     cars.forEach((car) => {
@@ -9,6 +10,8 @@ export function runRace(cars, count, resultContainer) {
     statusString += '<br>';
     resultContainer.innerHTML += statusString;
   }
+  const top = Math.max(...cars.map((car) => car.pos));
+  resultContainer.innerHTML += `최종 우승자: ${cars.filter((car) => (car.pos === top)).map((car) => car.name).join(', ')}`;
 }
 
 function getPath(pos) {
