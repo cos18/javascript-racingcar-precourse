@@ -6,7 +6,7 @@ export function initDOM() {
   carGameContainerDivs[1].querySelector('button').id = 'racing-count-submit';
 }
 
-export function changeVisibie(isVisible, ...elements) {
+export function changeVisible(isVisible, ...elements) {
   elements.forEach((el) => {
     el.style.visibility = (isVisible ? 'visible' : 'hidden');
   });
