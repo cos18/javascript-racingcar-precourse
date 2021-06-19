@@ -1,4 +1,4 @@
-import Car from './car.js';
+import Car, { runRace } from './car.js';
 import { initDOM, changeVisible } from './dom-utils.js';
 import checkNameVaild from './utils.js';
 
@@ -30,6 +30,7 @@ export default function RacingCarGame() {
 
   function onRacingCountClicked() {
     count = Number(racingCountInput.value);
+    runRace(cars, count, resultContainer);
     changeVisible(true, resultContainer);
   }
 
